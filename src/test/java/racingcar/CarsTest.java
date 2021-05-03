@@ -20,6 +20,22 @@ public class CarsTest {
         assertEquals(testList, carNames);
         String[] notCarNames = Cars.splitCarName("one,two,notThree");
         assertNotEquals(testList, notCarNames);
+    }
 
+    @Test
+    @DisplayName("여러 자동차 이름으로 자동차 객체 생성")
+    void create_cars() {
+        String[] carNames = Cars.splitCarName("one,two,three");
+        List<Car> cars = new ArrayList<>();
+        for (String carName : carNames) {
+            cars.add(new Car(carName));
+        }
+
+        List<Car> testCars = Arrays.asList(
+                new Car("one"),
+                new Car("two"),
+                new Car("three"));
+
+        assertNotEquals(cars, testCars);
     }
 }
