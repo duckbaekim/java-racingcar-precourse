@@ -13,4 +13,5 @@ public class ValidationUtilsTest {
         assertThat(ValidationUtils.validCarName("aasdf")).isTrue();
         assertThat(ValidationUtils.validCarName("aasdfd")).isFalse();
     }
+
 }
