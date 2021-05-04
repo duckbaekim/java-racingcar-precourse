@@ -1,7 +1,6 @@
 package racingcar;
 
-public class Car {
-
+public class Car implements Comparable<Car>{
 
     public static final int DEFAULT_POSITION = 0;
     public static final int MIN_MOVE_NUMBER = 3;
@@ -10,12 +9,18 @@ public class Car {
     private String name;
     private int position;
 
+
     public Car(String name) {
         if (!ValidationUtils.validCarName(name)) {
             throw new IllegalThreadStateException("이름은 5글자 이하로 입력하세요.");
         }
         this.name = name;
         this.position = DEFAULT_POSITION;
+    }
+
+    @Override
+    public int compareTo(Car car) {
+        return this.getPosition() - car.getPosition();
     }
 
     public void move(int number) {
