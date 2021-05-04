@@ -18,6 +18,17 @@ public class CarTest {
         car.move(2);
         assertEquals(car.getPosition(), 2);
     }
+    @Test
+    @DisplayName("포지션 출력 테스트")
+    void print_position(){
+        Car car = new Car("inqu");
+        car.move(6);
+        String bar = car.printPosition();
+        assertEquals(bar, "-");
+        car.move(6);
+        String bar2 = car.printPosition();
+        assertEquals(bar2, "--");
+    }
 }
 
 

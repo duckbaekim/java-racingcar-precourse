@@ -11,7 +11,7 @@ public class Car {
     private int position;
 
     public Car(String name) {
-        if(!ValidationUtils.validCarName(name)){
+        if (!ValidationUtils.validCarName(name)) {
             throw new IllegalThreadStateException("이름은 5글자 이하로 입력하세요.");
         }
         this.name = name;
@@ -19,9 +19,13 @@ public class Car {
     }
 
     public void move(int number) {
-        if(this.isMove(number)){
+        if (this.isMove(number)) {
             this.position++;
         }
+    }
+
+    public String printPosition() {
+        return "-".repeat(this.position);
     }
 
     public int getPosition() {
