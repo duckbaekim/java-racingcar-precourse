@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ValidationUtilsTest {
     public static final int MIN_RANDOM_NUMBER = 1;
@@ -21,16 +20,13 @@ public class ValidationUtilsTest {
     @Test
     @DisplayName("랜덤 숫자 테스트")
     void valid_random_number() {
-        int[] randomNumbers = ValidationUtils.getRandomNumber(5);
-        assertEquals(randomNumbers.length, 5);
-        for (int randomNumber : randomNumbers) {
-            assertThat(randomNumber >= MIN_RANDOM_NUMBER && randomNumber <= MAX_RANDOM_NUMBER).isTrue();
-        }
+        int randomNumber = ValidationUtils.getRandomNumber();
+        assertThat(randomNumber >= MIN_RANDOM_NUMBER && randomNumber <= MAX_RANDOM_NUMBER).isTrue();
     }
 
     @Test
     @DisplayName("이동 횟수 1이상 입력 받기")
-    void valid_input_move_number(){
+    void valid_input_move_number() {
         assertThat(ValidationUtils.isInputPossible(0)).isFalse();
         assertThat(ValidationUtils.isInputPossible(5)).isTrue();
     }

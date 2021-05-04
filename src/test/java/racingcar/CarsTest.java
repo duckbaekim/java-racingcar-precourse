@@ -35,27 +35,6 @@ public class CarsTest {
         assertNotEquals(cars, testCars);
     }
 
-    @Test
-    @DisplayName("모든 자동차 포지션 출력")
-    void print_position_all_car(){
-        Cars cars = new Cars();
-        cars.createCars("one,two,three");
-        int[] moves = ValidationUtils.getRandomNumber(5);
-        for(int move : moves){
-            System.out.println(move);
-            cars.moveAllCars(move);
-        }
-    }
 
-    @Test
-    @DisplayName("모든 자동차 이동")
-    void move_all_car(){
-        Cars cars = new Cars();
-        cars.createCars("one,two,three");
-        int[] moves = ValidationUtils.getRandomNumber(5);
-        for(int move : moves){
-            System.out.println(move);
-            cars.moveAllCars(move);
-        }
-    }
+
 }

@@ -17,9 +17,9 @@ public class Main {
                 System.out.println("시도할 회수는 1번 이상을 입력하세요.");
                 return;
             }
-            int[] randomMove = ValidationUtils.getRandomNumber(numberOfMoves);
-
-
+            for(int i=0; i<numberOfMoves; i++){
+                cars.moveAllCars();
+            }
         }catch(Exception exception){
             System.out.println(exception.getMessage());
         }

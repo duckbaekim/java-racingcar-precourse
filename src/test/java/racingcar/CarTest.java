@@ -23,12 +23,16 @@ public class CarTest {
     void print_position(){
         Car car = new Car("inqu");
         car.move(6);
-        String bar = car.printPosition();
+        String bar = car.positionToBar();
         assertEquals(bar, "-");
+        car.printPosition();
         car.move(6);
-        String bar2 = car.printPosition();
+        String bar2 = car.positionToBar();
         assertEquals(bar2, "--");
+        car.printPosition();
     }
+
+
 }
 
 

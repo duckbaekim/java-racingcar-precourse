@@ -20,9 +20,12 @@ public class Cars {
         this.cars = cars;
     }
 
-    public void moveAllCars(int move) {
+    public void moveAllCars() {
        for(Car car : this.cars){
-           car.isMove(move);
+           car.move(ValidationUtils.getRandomNumber());
+           car.printPosition();
        }
     }
+
+
 }

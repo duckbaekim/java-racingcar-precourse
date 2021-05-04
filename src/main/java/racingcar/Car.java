@@ -24,7 +24,11 @@ public class Car {
         }
     }
 
-    public String printPosition() {
+    public void printPosition() {
+        System.out.println(this.name + " : " + this.positionToBar());
+    }
+
+    public String positionToBar() {
         return "-".repeat(this.position);
     }
 

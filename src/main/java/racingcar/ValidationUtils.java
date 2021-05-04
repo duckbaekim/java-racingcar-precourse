@@ -14,13 +14,10 @@ public class ValidationUtils {
         return len > MIN_NAME_LENGTH && len <= MAX_NAME_LENGTH;
     }
 
-    public static int[] getRandomNumber(int randomSize) {
+    public static int getRandomNumber() {
         Random random = new Random();
-        int[] result = new int[randomSize];
-        for (int i = 0; i < randomSize; i++) {
-            result[i] = random.nextInt(8) + 1;
-        }
-        return result;
+        return  random.nextInt(8) + 1;
+
     }
 
     public static boolean isInputPossible(int input) {
