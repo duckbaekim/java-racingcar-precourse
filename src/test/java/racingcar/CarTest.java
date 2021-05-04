@@ -11,9 +11,11 @@ public class CarTest {
     @DisplayName("자동차 이동 테스트")
     void go_car(){
         Car car = new Car("inqu");
-        car.move();
+        car.move(4);
         assertEquals(car.getPosition(), 1);
-        car.move();
+        car.move(6);
+        assertEquals(car.getPosition(), 2);
+        car.move(2);
         assertEquals(car.getPosition(), 2);
     }
 }
