@@ -25,12 +25,25 @@ public class CarsTest {
     @Test
     @DisplayName("여러 자동차 이름으로 자동차 객체 생성")
     void create_cars() {
-        List<Car> cars = Cars.createCars("one,two,three");
+        Cars cars = new Cars();
+        cars.createCars("one,two,three");
         List<Car> testCars = Arrays.asList(
                 new Car("one"),
                 new Car("two"),
                 new Car("three"));
 
         assertNotEquals(cars, testCars);
+    }
+
+    @Test
+    @DisplayName("모든 자동차 이동")
+    void move_all_cars(){
+        Cars cars = new Cars();
+        cars.createCars("one,two,three");
+        int[] moves = ValidationUtils.getRandomNumber(5);
+        for(int move : moves){
+            System.out.println(move);
+            cars.moveAllCars(move);
+        }
     }
 }

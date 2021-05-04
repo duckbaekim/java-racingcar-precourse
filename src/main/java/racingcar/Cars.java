@@ -11,12 +11,18 @@ public class Cars {
         return names.split(",");
     }
 
-    public static List<Car> createCars(String names){
+    public void createCars(String names){
         String[] carNames = Cars.splitCarName(names);
         List<Car> cars = new ArrayList<>();
         for (String carName : carNames) {
             cars.add(new Car(carName));
         }
-        return cars;
+        this.cars = cars;
+    }
+
+    public void moveAllCars(int move) {
+       for(Car car : this.cars){
+           car.isMove(move);
+       }
     }
 }

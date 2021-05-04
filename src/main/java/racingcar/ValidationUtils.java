@@ -18,7 +18,7 @@ public class ValidationUtils {
         Random random = new Random();
         int[] result = new int[randomSize];
         for (int i = 0; i < randomSize; i++) {
-            result[i] = random.nextInt(10) - 1;
+            result[i] = random.nextInt(8) + 1;
         }
         return result;
     }
