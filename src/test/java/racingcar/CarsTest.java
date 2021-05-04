@@ -25,12 +25,7 @@ public class CarsTest {
     @Test
     @DisplayName("여러 자동차 이름으로 자동차 객체 생성")
     void create_cars() {
-        String[] carNames = Cars.splitCarName("one,two,three");
-        List<Car> cars = new ArrayList<>();
-        for (String carName : carNames) {
-            cars.add(new Car(carName));
-        }
-
+        List<Car> cars = Cars.createCars("one,two,three");
         List<Car> testCars = Arrays.asList(
                 new Car("one"),
                 new Car("two"),
