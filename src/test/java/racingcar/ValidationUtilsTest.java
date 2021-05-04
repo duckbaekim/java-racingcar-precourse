@@ -28,5 +28,12 @@ public class ValidationUtilsTest {
         }
     }
 
+    @Test
+    @DisplayName("이동 횟수 1이상 입력 받기")
+    void valid_input_move_number(){
+        assertThat(ValidationUtils.isInputPossible(0)).isFalse();
+        assertThat(ValidationUtils.isInputPossible(5)).isTrue();
+    }
+
 
 }

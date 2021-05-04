@@ -6,6 +6,7 @@ public class ValidationUtils {
 
     public static final int MAX_NAME_LENGTH = 5;
     public static final int MIN_NAME_LENGTH = 0;
+    public static final int MIN_INPUT = 1;
 
 
     public static boolean validCarName(String name) {
@@ -20,5 +21,9 @@ public class ValidationUtils {
             result[i] = random.nextInt(10) - 1;
         }
         return result;
+    }
+
+    public static boolean isInputPossible(int input) {
+        return MIN_INPUT <= input;
     }
 }
